@@ -10,9 +10,13 @@ function App() {
       <header>
         <p>Práctica TodoList</p>
       </header>
-      <h1>Lista de Tareas</h1>
-      <TodoAdd/>
-      <TodoList/>
+      
+      <article>
+        <h1>Lista de Tareas</h1>
+        <TodoAdd/>
+        <TodoList/>
+      </article>
+      <footer></footer>
      
     </>
   )

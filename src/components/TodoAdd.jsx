@@ -1,5 +1,7 @@
 export const TodoAdd = () => {
   return (
-    <h2>Añadir tarea</h2>
+    <section>
+      <h2>Añadir tarea</h2>
+    </section>
   )
 }
