@@ -1,5 +1,15 @@
+.containerAll {
+  max-width: 80dvw;
+}
+
 .flexContainer {
   display: flex;
+}
+/* .center {
+  align-content: center;
+} */
+.positionRow {
+  flex-flow: wrap column;
 }
 .alingLateral {
   justify-content: space-between;

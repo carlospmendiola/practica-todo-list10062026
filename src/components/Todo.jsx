@@ -1,8 +1,20 @@
-export const Todo = () => {
+export const Todo = ( {todo, handleDeleteTodo, handleToggleTodo}) => {
+  const handleToggleClick = ()=> {
+    handleToggleTodo(todo.id)
+  }
+  const handleDeleteClick = ()=> {
+    handleDeleteTodo(todo.id)
+
+  }
   return (
     <li className="flexContainer alingLateral">
-      <p class="tareaDetalle"><span>Tarea 1</span> - Lorem ipsum</p>
-      <div> <button>Finalizada</button><button>Pendiente</button><button>Eliminar</button></div>
+      <p className="tareaDetalle"><span>{todo.todo}</span> - {todo.description}</p>
+      <div><button onClick={handleToggleClick}> 
+        {todo.done? 
+          'Finalizada' : 'Pendiente'
+        }</button>
+        <button onClick={handleDeleteClick}>Eliminar</button>
+        </div>
     </li>
   )
 }
