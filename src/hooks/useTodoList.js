@@ -7,10 +7,6 @@ export const useTodoList = (defaultValue) => {
 
   const [todos, dispatch] = useReducer(todoReducer, [], init);
 
-  useEffect(() => {
-    todos.length ? localStorage.setItem("todos", JSON.stringify(todos)) : localStorage.removeItem("todos")
-  }, [todos])
-
   const handleAddTodo = (todo) => {
     const action = {
       type: 'add-todo',
@@ -34,6 +30,10 @@ export const useTodoList = (defaultValue) => {
     }
     dispatch(action)
   }
+
+  useEffect(() => {
+    todos.length ? localStorage.setItem("todos", JSON.stringify(todos)) : localStorage.removeItem("todos")
+  }, [todos])
 
   return {
     todos,
