@@ -3,10 +3,6 @@ import './App.css'
 import { TodoAdd } from './components/TodoAdd'
 import { TodoList } from './components/TodoList'
 import { useTodoList } from './hooks/useTodoList'
-// import { todoReducer } from "./reducer/todoReducer"
-// import { useReducer } from "react"
-
-
 
 function App() {
   const {
@@ -14,10 +10,10 @@ function App() {
     handleDeleteTodo,
     handleAddTodo,
     handleToggleTodo
-  } = useTodoList(JSON.parse(localStorage.getItem("todos")))
+  } = useTodoList()
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos))
+    todos.length ? localStorage.setItem("todos", JSON.stringify(todos)) : localStorage.removeItem("todos")
   }, [todos])
 
   return (

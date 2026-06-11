@@ -1,10 +1,11 @@
 import { useReducer } from "react";
 import { todoReducer } from "../reducer/todoReducer";
 
+const init = () => JSON.parse(localStorage.getItem("todos")) || []
 
 export const useTodoList = (defaultValue) => {
 
-  const [todos, dispatch] = useReducer(todoReducer, defaultValue);
+  const [todos, dispatch] = useReducer(todoReducer, [], init);
 
   const handleAddTodo = (todo) => {
     const action = {
