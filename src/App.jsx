@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import './App.css'
 import { TodoAdd } from './components/TodoAdd'
 import { TodoList } from './components/TodoList'
@@ -11,10 +10,6 @@ function App() {
     handleAddTodo,
     handleToggleTodo
   } = useTodoList()
-
-  useEffect(() => {
-    todos.length ? localStorage.setItem("todos", JSON.stringify(todos)) : localStorage.removeItem("todos")
-  }, [todos])
 
   return (
     <>
